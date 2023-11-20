@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LojaVeiculos
 {
-    public partial class frmInicio : Form
+    public partial class frmUsuarios : Form
     {
-        public frmInicio()
+        public frmUsuarios()
         {
             InitializeComponent();
         }

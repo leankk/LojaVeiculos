@@ -14,7 +14,7 @@ namespace LojaVeiculos
         [STAThread]
         static void Main()
         {
-           
+            
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
         }

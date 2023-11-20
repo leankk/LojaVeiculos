@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.pnMenu = new System.Windows.Forms.Panel();
-            this.lblConsulta = new System.Windows.Forms.Label();
-            this.lblVeiculos = new System.Windows.Forms.Label();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.lblInicio = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.btnVeiculos = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnConteudo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnMenu.SuspendLayout();
@@ -45,104 +46,134 @@
             // pnMenu
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
-            this.pnMenu.Controls.Add(this.lblConsulta);
-            this.pnMenu.Controls.Add(this.lblVeiculos);
-            this.pnMenu.Controls.Add(this.lblCliente);
-            this.pnMenu.Controls.Add(this.lblInicio);
+            this.pnMenu.Controls.Add(this.lblUser);
+            this.pnMenu.Controls.Add(this.label1);
+            this.pnMenu.Controls.Add(this.btnConsulta);
+            this.pnMenu.Controls.Add(this.btnVeiculos);
+            this.pnMenu.Controls.Add(this.btnCliente);
+            this.pnMenu.Controls.Add(this.btnInicio);
             this.pnMenu.Controls.Add(this.btnSair);
-            this.pnMenu.Controls.Add(this.flowLayoutPanel1);
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(164, 500);
+            this.pnMenu.Size = new System.Drawing.Size(197, 699);
             this.pnMenu.TabIndex = 0;
             // 
-            // lblConsulta
+            // lblUser
             // 
-            this.lblConsulta.AutoSize = true;
-            this.lblConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblConsulta.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.lblConsulta.Location = new System.Drawing.Point(41, 218);
-            this.lblConsulta.Name = "lblConsulta";
-            this.lblConsulta.Size = new System.Drawing.Size(79, 21);
-            this.lblConsulta.TabIndex = 9;
-            this.lblConsulta.Text = "Consulta";
-            this.lblConsulta.Click += new System.EventHandler(this.lblConsulta_Click);
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.Red;
+            this.lblUser.Location = new System.Drawing.Point(65, 547);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 21);
+            this.lblUser.TabIndex = 3;
             // 
-            // lblVeiculos
+            // label1
             // 
-            this.lblVeiculos.AutoSize = true;
-            this.lblVeiculos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVeiculos.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVeiculos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.lblVeiculos.Location = new System.Drawing.Point(41, 172);
-            this.lblVeiculos.Name = "lblVeiculos";
-            this.lblVeiculos.Size = new System.Drawing.Size(76, 21);
-            this.lblVeiculos.TabIndex = 8;
-            this.lblVeiculos.Text = "Veículos";
-            this.lblVeiculos.Click += new System.EventHandler(this.lblVeiculos_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.label1.Location = new System.Drawing.Point(18, 506);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 21);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Usuário conectado: ";
             // 
-            // lblCliente
+            // btnConsulta
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCliente.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.lblCliente.Location = new System.Drawing.Point(47, 122);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(65, 21);
-            this.lblCliente.TabIndex = 7;
-            this.lblCliente.Text = "Cliente";
-            this.lblCliente.Click += new System.EventHandler(this.lblCliente_Click);
+            this.btnConsulta.FlatAppearance.BorderSize = 0;
+            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnConsulta.Location = new System.Drawing.Point(0, 402);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(197, 54);
+            this.btnConsulta.TabIndex = 13;
+            this.btnConsulta.Text = "Consulta";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            this.btnConsulta.MouseEnter += new System.EventHandler(this.btnConsulta_MouseEnter);
+            this.btnConsulta.MouseLeave += new System.EventHandler(this.btnConsulta_MouseLeave);
             // 
-            // lblInicio
+            // btnVeiculos
             // 
-            this.lblInicio.AutoSize = true;
-            this.lblInicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblInicio.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.lblInicio.Location = new System.Drawing.Point(52, 76);
-            this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(53, 21);
-            this.lblInicio.TabIndex = 6;
-            this.lblInicio.Text = "Início";
-            this.lblInicio.Click += new System.EventHandler(this.lblInicio_Click);
+            this.btnVeiculos.FlatAppearance.BorderSize = 0;
+            this.btnVeiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVeiculos.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVeiculos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnVeiculos.Location = new System.Drawing.Point(0, 297);
+            this.btnVeiculos.Name = "btnVeiculos";
+            this.btnVeiculos.Size = new System.Drawing.Size(197, 54);
+            this.btnVeiculos.TabIndex = 12;
+            this.btnVeiculos.Text = "Veículos";
+            this.btnVeiculos.UseVisualStyleBackColor = true;
+            this.btnVeiculos.Click += new System.EventHandler(this.btnVeiculos_Click);
+            this.btnVeiculos.MouseEnter += new System.EventHandler(this.btnVeiculos_MouseEnter);
+            this.btnVeiculos.MouseLeave += new System.EventHandler(this.btnVeiculos_MouseLeave);
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.FlatAppearance.BorderSize = 0;
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnCliente.Location = new System.Drawing.Point(0, 196);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(197, 54);
+            this.btnCliente.TabIndex = 11;
+            this.btnCliente.Text = "Cliente";
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            this.btnCliente.MouseEnter += new System.EventHandler(this.btnCliente_MouseEnter);
+            this.btnCliente.MouseLeave += new System.EventHandler(this.btnCliente_MouseLeave);
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicio.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnInicio.Location = new System.Drawing.Point(0, 96);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(197, 54);
+            this.btnInicio.TabIndex = 10;
+            this.btnInicio.Text = "Usuários";
+            this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            this.btnInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
+            this.btnInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
             // 
             // btnSair
             // 
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSair.Location = new System.Drawing.Point(45, 404);
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(58, 635);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 42);
             this.btnSair.TabIndex = 5;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(165, 8);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(634, 438);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // pnConteudo
             // 
+            this.pnConteudo.BackColor = System.Drawing.Color.Black;
             this.pnConteudo.Controls.Add(this.pictureBox1);
-            this.pnConteudo.Location = new System.Drawing.Point(165, 0);
+            this.pnConteudo.Location = new System.Drawing.Point(198, -1);
             this.pnConteudo.Name = "pnConteudo";
-            this.pnConteudo.Size = new System.Drawing.Size(634, 500);
+            this.pnConteudo.Size = new System.Drawing.Size(702, 700);
             this.pnConteudo.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::LojaVeiculos.Properties.Resources.teste;
+            this.pictureBox1.BackgroundImage = global::LojaVeiculos.Properties.Resources.logoalt;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(79, 129);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(634, 499);
+            this.pictureBox1.Size = new System.Drawing.Size(560, 455);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -151,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.pnConteudo);
             this.Controls.Add(this.pnMenu);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -171,13 +202,14 @@
         #endregion
 
         private System.Windows.Forms.Panel pnMenu;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Label lblConsulta;
-        private System.Windows.Forms.Label lblVeiculos;
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.Label lblInicio;
         private System.Windows.Forms.Panel pnConteudo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Button btnVeiculos;
+        private System.Windows.Forms.Button btnCliente;
+        private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label label1;
     }
 }

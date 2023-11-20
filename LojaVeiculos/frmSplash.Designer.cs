@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pbSplash = new System.Windows.Forms.PictureBox();
             this.pgSplash = new System.Windows.Forms.ProgressBar();
+            this.pbSplash = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSplash)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,25 +40,25 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pgSplash
+            // 
+            this.pgSplash.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.pgSplash.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pgSplash.Location = new System.Drawing.Point(12, 253);
+            this.pgSplash.Name = "pgSplash";
+            this.pgSplash.Size = new System.Drawing.Size(676, 35);
+            this.pgSplash.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pgSplash.TabIndex = 3;
+            // 
             // pbSplash
             // 
-            this.pbSplash.BackgroundImage = global::LojaVeiculos.Properties.Resources.teste;
+            this.pbSplash.BackgroundImage = global::LojaVeiculos.Properties.Resources.logoalt;
             this.pbSplash.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbSplash.Location = new System.Drawing.Point(-2, -1);
             this.pbSplash.Name = "pbSplash";
             this.pbSplash.Size = new System.Drawing.Size(702, 302);
             this.pbSplash.TabIndex = 1;
             this.pbSplash.TabStop = false;
-            // 
-            // pgSplash
-            // 
-            this.pgSplash.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.pgSplash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
-            this.pgSplash.Location = new System.Drawing.Point(12, 253);
-            this.pgSplash.Name = "pgSplash";
-            this.pgSplash.Size = new System.Drawing.Size(676, 35);
-            this.pgSplash.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgSplash.TabIndex = 3;
             // 
             // frmSplash
             // 
@@ -71,6 +71,7 @@
             this.Name = "frmSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSplash";
+            this.Load += new System.EventHandler(this.frmSplash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSplash)).EndInit();
             this.ResumeLayout(false);
 

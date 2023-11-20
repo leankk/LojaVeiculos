@@ -15,8 +15,9 @@ namespace LojaVeiculos
     {
         Conexao con = new Conexao();
 
+        public bool log = false;
         public static string UserConnected;
-
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace LojaVeiculos
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DataTable dados = new DataTable();
-            MySqlDataAdapter select = new MySqlDataAdapter("SELECT * FROM TBLOGIN WHERE NM_USUARIO=@USER AND ID_SENHA=@SENHA", con.Connect());
+            MySqlDataAdapter select = new MySqlDataAdapter("SELECT * FROM TBLOGIN WHERE NMUSUARIO=@USER AND DSSENHA=@SENHA", con.Connect());
             select.SelectCommand.Parameters.AddWithValue("@USER", txtUsuario.Text);
             select.SelectCommand.Parameters.AddWithValue("@SENHA", txtSenha.Text);
             select.Fill(dados);
@@ -44,9 +45,10 @@ namespace LojaVeiculos
             }
             else
             {
+                UserConnected = txtUsuario.Text;
+                log = true;
                 frmSplash objSplash = new frmSplash();
                 objSplash.ShowDialog();
-                txtUsuario.Text = UserConnected;
                 this.Close();
             }
         }

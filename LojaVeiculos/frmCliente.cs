@@ -14,6 +14,7 @@ namespace LojaVeiculos
         }
 
         Conexao con = new Conexao();
+        formDAO dao = new formDAO();
 
         private void ValidateFields()
         {
@@ -35,7 +36,7 @@ namespace LojaVeiculos
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtNasc.Focus();
             }
-            else if (txtLogra.Text == "")
+            else if (!dtNasc.MaskCompleted)
             {
                 MessageBox.Show("Obrigatório Preencher o campo Logradouro!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -69,22 +70,9 @@ namespace LojaVeiculos
             {
                 try
                 {
-                    Convert.ToString(dtNasc.Text);
-
-                    string strSql = "INSERT INTO TBCLIENTE (NM_CLI, SOBRENOME_CLI, DT_NASC) VALUES (@nome, @sobrenome, STR_TO_DATE(@datanasc, '%d %m %Y %T'));";
-                    MySqlCommand cmd = new MySqlCommand(strSql, con.Connect());
-
-                    cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = txtNome.Text;
-                    cmd.Parameters.Add("@sobrenome", MySqlDbType.VarChar).Value = txtSobreNome.Text;
-                    cmd.Parameters.Add("@datanasc", MySqlDbType.Date).Value = dtNasc.Text;
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Dados cadastrados com sucesso!", "Sucesso",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dao.InsertClient();
                     ClearFields();
                     txtNome.Focus();
-
-                    con.Disconnect();
                 }
                 catch (Exception ex)
                 {

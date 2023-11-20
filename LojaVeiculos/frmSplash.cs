@@ -28,19 +28,10 @@ namespace LojaVeiculos
 
         }
 
-        public void ProgressBarLinearGradiente(PaintEventArgs e)
+        private void frmSplash_Load(object sender, EventArgs e)
         {
-            LinearGradientBrush linGrBrush = new LinearGradientBrush(
-            new Point(0, 10),
-            new Point(200, 10),
-            Color.FromArgb(100, 0, 15, 0),   // Opaque red
-            Color.FromArgb(80, 0, 15, 255));  // Opaque blue
-
-            Pen pen = new Pen(linGrBrush);
-
-            e.Graphics.DrawLine(pen, 0, 10, 200, 10);
-            e.Graphics.FillEllipse(linGrBrush, 0, 30, 200, 100);
-            e.Graphics.FillRectangle(linGrBrush, 0, 155, 500, 30);
+            pgSplash.Style = ProgressBarStyle.Continuous;
+            pgSplash.ForeColor = Color.FromArgb(100, 0, 25);
         }
     }
 }

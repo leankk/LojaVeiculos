@@ -29,22 +29,14 @@ namespace LojaVeiculos
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbLine = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLine)).BeginInit();
+            this.pbLine = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLine)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbLine
-            // 
-            this.pbLine.Location = new System.Drawing.Point(59, 64);
-            this.pbLine.Name = "pbLine";
-            this.pbLine.Size = new System.Drawing.Size(500, 1);
-            this.pbLine.TabIndex = 41;
-            this.pbLine.TabStop = false;
             // 
             // label1
             // 
@@ -64,7 +56,7 @@ namespace LojaVeiculos
             "---------",
             "Veículos",
             "Clientes"});
-            this.comboBox1.Location = new System.Drawing.Point(59, 101);
+            this.comboBox1.Location = new System.Drawing.Point(345, 354);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(192, 21);
             this.comboBox1.TabIndex = 42;
@@ -75,27 +67,35 @@ namespace LojaVeiculos
             this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastro.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnCadastro.Location = new System.Drawing.Point(272, 101);
+            this.btnCadastro.Location = new System.Drawing.Point(543, 350);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(87, 28);
             this.btnCadastro.TabIndex = 49;
-            this.btnCadastro.Text = "Cadastrar";
+            this.btnCadastro.Text = "Consultar";
             this.btnCadastro.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(114, 181);
+            this.dataGridView1.Location = new System.Drawing.Point(82, 393);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(411, 238);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 267);
             this.dataGridView1.TabIndex = 50;
+            // 
+            // pbLine
+            // 
+            this.pbLine.Location = new System.Drawing.Point(59, 64);
+            this.pbLine.Name = "pbLine";
+            this.pbLine.Size = new System.Drawing.Size(500, 1);
+            this.pbLine.TabIndex = 41;
+            this.pbLine.TabStop = false;
             // 
             // frmConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.comboBox1);
@@ -105,8 +105,8 @@ namespace LojaVeiculos
             this.Name = "frmConsulta";
             this.Text = "frmConsulta";
             this.Load += new System.EventHandler(this.frmConsulta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
