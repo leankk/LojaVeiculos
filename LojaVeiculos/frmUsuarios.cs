@@ -16,5 +16,18 @@ namespace LojaVeiculos
         {
             InitializeComponent();
         }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            pbLine.BackColor = Color.White;
+        }
+
+        private void pbLine_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
+                pbLine.Right, pbLine.Bottom);
+        }
     }
 }

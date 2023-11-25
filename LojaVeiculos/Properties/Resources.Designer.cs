@@ -83,6 +83,16 @@ namespace LojaVeiculos.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoaltsemfundo {
+            get {
+                object obj = ResourceManager.GetObject("logoaltsemfundo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logosemfundo {
             get {
                 object obj = ResourceManager.GetObject("logosemfundo", resourceCulture);

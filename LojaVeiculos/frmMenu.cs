@@ -37,9 +37,11 @@ namespace LojaVeiculos
             lblUser.Text = frmLogin.UserConnected;
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
+        private void btnConsulta_Click(object sender, EventArgs e)
         {
-            SwitchScreens(new frmUsuarios());
+            this.Close();
+            frmLogin objlog = new frmLogin();
+            objlog.ShowDialog();
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -47,14 +49,14 @@ namespace LojaVeiculos
             SwitchScreens(new frmCliente());
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            SwitchScreens(new frmUsuarios());
+        }
+
         private void btnVeiculos_Click(object sender, EventArgs e)
         {
             SwitchScreens(new frmVeiculos());
-        }
-
-        private void btnConsulta_Click(object sender, EventArgs e)
-        {
-            SwitchScreens(new frmConsulta());
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -71,45 +73,39 @@ namespace LojaVeiculos
             btnInicio.BackColor = Color.FromArgb(25, 25, 25);
         }
 
-        private void btnInicio_MouseLeave(object sender, EventArgs e)
-        {
-            btnInicio.BackColor = Color.Transparent;
-        }
-
         private void btnCliente_MouseEnter(object sender, EventArgs e)
         {
             btnCliente.BackColor = Color.FromArgb(25, 25, 25);
         }
 
-
-        private void btnCliente_MouseLeave(object sender, EventArgs e)
+        private void btnConsulta_MouseEnter(object sender, EventArgs e)
         {
-            btnCliente.BackColor = Color.Transparent;
-
+            btnConsulta.BackColor = Color.FromArgb(25, 25, 25);
         }
 
         private void btnVeiculos_MouseEnter(object sender, EventArgs e)
         {
             btnVeiculos.BackColor = Color.FromArgb(25, 25, 25);
-
         }
 
-        private void btnVeiculos_MouseLeave(object sender, EventArgs e)
+        private void btnInicio_MouseLeave(object sender, EventArgs e)
         {
-            btnVeiculos.BackColor = Color.Transparent;
-
+            btnInicio.BackColor = Color.Transparent;
         }
 
-        private void btnConsulta_MouseEnter(object sender, EventArgs e)
+        private void btnCliente_MouseLeave(object sender, EventArgs e)
         {
-            btnConsulta.BackColor = Color.FromArgb(25, 25, 25);
-
+            btnCliente.BackColor = Color.Transparent;
         }
 
         private void btnConsulta_MouseLeave(object sender, EventArgs e)
         {
             btnConsulta.BackColor = Color.Transparent;
+        }
 
+        private void btnVeiculos_MouseLeave(object sender, EventArgs e)
+        {
+            btnVeiculos.BackColor = Color.Transparent;
         }
     }
 }

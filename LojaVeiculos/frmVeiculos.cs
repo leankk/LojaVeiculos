@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,15 +28,13 @@ namespace LojaVeiculos
 
         private void pbLine_Paint(object sender, PaintEventArgs e)
         {
-            // Create a local version of the graphics object for the PictureBox.
             Graphics g = e.Graphics;
 
-            // Draw a line in the PictureBox.
             g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
                 pbLine.Right, pbLine.Bottom);
         }
          private void ValidateFields()
-        {
+         {
             if (txtModel.Text == "")
             {
                 MessageBox.Show("Obrigatório Preencher o campo Modelo!", "Erro",
@@ -64,15 +63,48 @@ namespace LojaVeiculos
             {
                 try
                 {
-                    dao.InsertCars();
+                    InsertCars();
+                    ClearFields();
+                    txtMarca.Focus();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
-                    throw;
+                    MessageBox.Show("Não foi possível cadastrar o cliente.\nMotivo do erro: " + ex, "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    con.Disconnect();
+                    ClearFields();
+                    txtMarca.Focus();
                 }
             }
+         }
+
+        public void InsertCars()
+        {
+            string strCarsSql = $"INSERT INTO TBVEICULOS (NMMODELO, NMFABRICACAO, NOPLACA, NMMARCA, VLPRECO, DSCOR, DSDESCRICAO)" +
+                $" AND VALUES ('{txtModel.Text}', '{txtFab.Text}', '{txtPlaca.Text}', '{txtMarca.Text}', '{txtPreco.Text}', '{txtCor.Text}', '{txtDesc.Text}');";
+
+            MySqlCommand cmdCars = new MySqlCommand(strCarsSql, con.Connect());
+            cmdCars.ExecuteNonQuery();
+
+            MessageBox.Show("Dados cadastrados com sucesso!", "Sucesso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            con.Disconnect();
         }
 
+        private void ClearFields()
+        {
+            txtMarca.Clear();
+            txtModel.Clear();
+            txtPlaca.Clear();
+            txtFab.Clear();
+            txtDesc.Clear();
+            txtCor.Clear();
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
     }
 }

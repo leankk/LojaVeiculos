@@ -16,55 +16,66 @@ namespace LojaVeiculos
         Conexao con = new Conexao();
         formDAO dao = new formDAO();
 
-        private void ValidateFields()
+        public string nome, sobrenome, datanasc;
+
+        private bool ValidateFields()
         {
             if (txtNome.Text == "")
             {
                 MessageBox.Show("Obrigatório Preencher o campo Nome!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNome.Focus();
+                return false;
+                
             }
             else if (txtSobreNome.Text == "")
             {
                 MessageBox.Show("Obrigatório Preencher o campo Sobrenome!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSobreNome.Focus();
+                return false;
             }
             else if (dtNasc.Text == "")
             {
                 MessageBox.Show("Digite uma data", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtNasc.Focus();
+                return false;
             }
             else if (!dtNasc.MaskCompleted)
             {
                 MessageBox.Show("Obrigatório Preencher o campo Logradouro!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLogra.Focus();
+                return false;
             }
             else if (nmNoResi.Value < 0)
             {
                 MessageBox.Show("Use apenas números positivos!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 nmNoResi.Focus();
+                return false;
             }
             else if (txtBairro.Text == "")
             {
                 MessageBox.Show("Obrigatório Preencher o campo Bairro!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtBairro.Focus();
+                return false;
             }
             else if (txtCidade.Text == "")
             {
                 MessageBox.Show("Obrigatório Preencher o campo Cidade!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCidade.Focus();
+                return false;
             }
             else if (lbEstados.SelectedIndex == -1)
             {
                 MessageBox.Show("Obrigatório selecionar um estado da lista!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lbEstados.Focus();
+                return false;
             }
             else
             {
@@ -73,12 +84,14 @@ namespace LojaVeiculos
                     dao.InsertClient();
                     ClearFields();
                     txtNome.Focus();
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Não foi possível cadastrar o cliente.\nMotivo do erro: " + ex.Message);
                     con.Disconnect();
                     ClearFields();
+                    return false;
                 }
             }
         }
@@ -102,16 +115,20 @@ namespace LojaVeiculos
         }
         private void pbLine_Paint(object sender, PaintEventArgs e)
         {
-            // Create a local version of the graphics object for the PictureBox.
             Graphics g = e.Graphics;
 
-            // Draw a line in the PictureBox.
             g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
                 pbLine.Right, pbLine.Bottom);
         }
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            ValidateFields();
+            if (ValidateFields())
+            {
+            txtNome.Text = nome;
+            txtSobreNome.Text = sobrenome;
+            dtNasc.Text = datanasc;
+            }
+            
         }
     }
 }

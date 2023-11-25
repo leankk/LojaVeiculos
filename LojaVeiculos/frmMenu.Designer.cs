@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.pnMenu = new System.Windows.Forms.Panel();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnConsulta = new System.Windows.Forms.Button();
             this.btnVeiculos = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.pnConteudo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnConteudo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,17 +48,92 @@
             // pnMenu
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
-            this.pnMenu.Controls.Add(this.lblUser);
-            this.pnMenu.Controls.Add(this.label1);
+            this.pnMenu.Controls.Add(this.pictureBox2);
             this.pnMenu.Controls.Add(this.btnConsulta);
             this.pnMenu.Controls.Add(this.btnVeiculos);
             this.pnMenu.Controls.Add(this.btnCliente);
             this.pnMenu.Controls.Add(this.btnInicio);
+            this.pnMenu.Controls.Add(this.lblUser);
+            this.pnMenu.Controls.Add(this.label1);
             this.pnMenu.Controls.Add(this.btnSair);
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(197, 699);
             this.pnMenu.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::LojaVeiculos.Properties.Resources.logoaltsemfundo;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(171, 120);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.FlatAppearance.BorderSize = 0;
+            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnConsulta.Location = new System.Drawing.Point(0, 374);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(197, 54);
+            this.btnConsulta.TabIndex = 18;
+            this.btnConsulta.Text = "Trocar Usuário";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            this.btnConsulta.MouseEnter += new System.EventHandler(this.btnConsulta_MouseEnter);
+            this.btnConsulta.MouseLeave += new System.EventHandler(this.btnConsulta_MouseLeave);
+            // 
+            // btnVeiculos
+            // 
+            this.btnVeiculos.FlatAppearance.BorderSize = 0;
+            this.btnVeiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVeiculos.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVeiculos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnVeiculos.Location = new System.Drawing.Point(0, 299);
+            this.btnVeiculos.Name = "btnVeiculos";
+            this.btnVeiculos.Size = new System.Drawing.Size(197, 54);
+            this.btnVeiculos.TabIndex = 17;
+            this.btnVeiculos.Text = "Veículos";
+            this.btnVeiculos.UseVisualStyleBackColor = true;
+            this.btnVeiculos.Click += new System.EventHandler(this.btnVeiculos_Click);
+            this.btnVeiculos.MouseEnter += new System.EventHandler(this.btnVeiculos_MouseEnter);
+            this.btnVeiculos.MouseLeave += new System.EventHandler(this.btnVeiculos_MouseLeave);
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.FlatAppearance.BorderSize = 0;
+            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCliente.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnCliente.Location = new System.Drawing.Point(0, 225);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(197, 54);
+            this.btnCliente.TabIndex = 16;
+            this.btnCliente.Text = "Cliente";
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            this.btnCliente.MouseEnter += new System.EventHandler(this.btnCliente_MouseEnter);
+            this.btnCliente.MouseLeave += new System.EventHandler(this.btnCliente_MouseLeave);
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicio.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnInicio.Location = new System.Drawing.Point(0, 153);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(197, 54);
+            this.btnInicio.TabIndex = 15;
+            this.btnInicio.Text = "Usuários";
+            this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            this.btnInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
+            this.btnInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
             // 
             // lblUser
             // 
@@ -78,70 +155,6 @@
             this.label1.Size = new System.Drawing.Size(165, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuário conectado: ";
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.FlatAppearance.BorderSize = 0;
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnConsulta.Location = new System.Drawing.Point(0, 402);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(197, 54);
-            this.btnConsulta.TabIndex = 13;
-            this.btnConsulta.Text = "Consulta";
-            this.btnConsulta.UseVisualStyleBackColor = true;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            this.btnConsulta.MouseEnter += new System.EventHandler(this.btnConsulta_MouseEnter);
-            this.btnConsulta.MouseLeave += new System.EventHandler(this.btnConsulta_MouseLeave);
-            // 
-            // btnVeiculos
-            // 
-            this.btnVeiculos.FlatAppearance.BorderSize = 0;
-            this.btnVeiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVeiculos.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeiculos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnVeiculos.Location = new System.Drawing.Point(0, 297);
-            this.btnVeiculos.Name = "btnVeiculos";
-            this.btnVeiculos.Size = new System.Drawing.Size(197, 54);
-            this.btnVeiculos.TabIndex = 12;
-            this.btnVeiculos.Text = "Veículos";
-            this.btnVeiculos.UseVisualStyleBackColor = true;
-            this.btnVeiculos.Click += new System.EventHandler(this.btnVeiculos_Click);
-            this.btnVeiculos.MouseEnter += new System.EventHandler(this.btnVeiculos_MouseEnter);
-            this.btnVeiculos.MouseLeave += new System.EventHandler(this.btnVeiculos_MouseLeave);
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.FlatAppearance.BorderSize = 0;
-            this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCliente.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnCliente.Location = new System.Drawing.Point(0, 196);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(197, 54);
-            this.btnCliente.TabIndex = 11;
-            this.btnCliente.Text = "Cliente";
-            this.btnCliente.UseVisualStyleBackColor = true;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
-            this.btnCliente.MouseEnter += new System.EventHandler(this.btnCliente_MouseEnter);
-            this.btnCliente.MouseLeave += new System.EventHandler(this.btnCliente_MouseLeave);
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.FlatAppearance.BorderSize = 0;
-            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnInicio.Location = new System.Drawing.Point(0, 96);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(197, 54);
-            this.btnInicio.TabIndex = 10;
-            this.btnInicio.Text = "Usuários";
-            this.btnInicio.UseVisualStyleBackColor = true;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            this.btnInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
-            this.btnInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
             // 
             // btnSair
             // 
@@ -193,6 +206,7 @@
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnMenu.ResumeLayout(false);
             this.pnMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnConteudo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -205,11 +219,12 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel pnConteudo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.Button btnVeiculos;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnInicio;
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Label label1;
     }
 }

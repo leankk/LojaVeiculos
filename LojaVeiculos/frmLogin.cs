@@ -69,5 +69,18 @@ namespace LojaVeiculos
                 txtSenha.UseSystemPasswordChar = true;
             }
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            pbLine.BackColor = Color.White;
+        }
+
+        private void pbLine_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
+                pbLine.Right, pbLine.Bottom);
+        }
     }
 }
