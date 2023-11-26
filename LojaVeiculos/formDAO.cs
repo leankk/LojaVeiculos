@@ -31,23 +31,5 @@ namespace LojaVeiculos
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             con.Disconnect();
         }
-
-        public void InsertCars()
-        {
-            vei = new frmVeiculos();
-
-            //string strCarsSql = "INSERT INTO TBVEICULOS (NMMODELO, NMFABRICACAO, NOPLACA, NMMARCA, VLPRECO, DSCOR, DSDESCRICAO) AND VALUES (@modelo, @fab, @placa, @marca, @preco, @desc);";
-            
-            
-
-           /* cmdCars.Parameters.Add("@modelo", MySqlDbType.VarChar).Value = vei.modelo;
-            cmdCars.Parameters.Add("@fab", MySqlDbType.VarChar).Value = vei.marca;
-            cmdCars.Parameters.Add("@placa", MySqlDbType.VarChar).Value = vei.placa;
-            cmdCars.Parameters.Add("@marca", MySqlDbType.VarChar).Value = vei.marca;
-            cmdCars.Parameters.Add("@preco", MySqlDbType.Decimal).Value = vei.preco;
-            cmdCars.Parameters.Add("@desc", MySqlDbType.VarChar).Value = vei.desc;*/
-
-   
-        }
     }
 }
