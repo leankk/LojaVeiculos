@@ -80,7 +80,7 @@
             this.btnConsulta.Location = new System.Drawing.Point(0, 374);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(197, 54);
-            this.btnConsulta.TabIndex = 18;
+            this.btnConsulta.TabIndex = 4;
             this.btnConsulta.Text = "Trocar Usuário";
             this.btnConsulta.UseVisualStyleBackColor = true;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
@@ -96,7 +96,7 @@
             this.btnVeiculos.Location = new System.Drawing.Point(0, 299);
             this.btnVeiculos.Name = "btnVeiculos";
             this.btnVeiculos.Size = new System.Drawing.Size(197, 54);
-            this.btnVeiculos.TabIndex = 17;
+            this.btnVeiculos.TabIndex = 3;
             this.btnVeiculos.Text = "Veículos";
             this.btnVeiculos.UseVisualStyleBackColor = true;
             this.btnVeiculos.Click += new System.EventHandler(this.btnVeiculos_Click);
@@ -112,7 +112,7 @@
             this.btnCliente.Location = new System.Drawing.Point(0, 225);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(197, 54);
-            this.btnCliente.TabIndex = 16;
+            this.btnCliente.TabIndex = 2;
             this.btnCliente.Text = "Cliente";
             this.btnCliente.UseVisualStyleBackColor = true;
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
@@ -128,7 +128,7 @@
             this.btnInicio.Location = new System.Drawing.Point(0, 153);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(197, 54);
-            this.btnInicio.TabIndex = 15;
+            this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Usuários";
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);

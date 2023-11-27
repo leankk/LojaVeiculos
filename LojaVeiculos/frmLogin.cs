@@ -47,8 +47,8 @@ namespace LojaVeiculos
             {
                 UserConnected = txtUsuario.Text;
                 log = true;
-                frmSplash objSplash = new frmSplash();
-                objSplash.ShowDialog();
+                frmMenu objMenu = new frmMenu();
+                objMenu.ShowDialog();
                 this.Close();
             }
         }

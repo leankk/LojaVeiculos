@@ -45,6 +45,7 @@
             this.pgSplash.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.pgSplash.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pgSplash.Location = new System.Drawing.Point(12, 253);
+            this.pgSplash.Margin = new System.Windows.Forms.Padding(0);
             this.pgSplash.Name = "pgSplash";
             this.pgSplash.Size = new System.Drawing.Size(633, 35);
             this.pgSplash.Style = System.Windows.Forms.ProgressBarStyle.Continuous;

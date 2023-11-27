@@ -22,8 +22,8 @@ namespace LojaVeiculos
             {
                 timer1.Enabled = false;
                 this.Visible = false;
-                frmMenu objmenu = new frmMenu();
-                objmenu.ShowDialog();
+                frmLogin objLogin = new frmLogin();
+                objLogin.ShowDialog();
             }
 
         }
@@ -32,6 +32,7 @@ namespace LojaVeiculos
         {
             pgSplash.Style = ProgressBarStyle.Continuous;
             pgSplash.ForeColor = Color.FromArgb(100, 0, 25);
+            pgSplash.BackColor = Color.FromArgb(0, 0, 0);
         }
     }
 }

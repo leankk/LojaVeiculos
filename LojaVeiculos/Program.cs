@@ -16,7 +16,7 @@ namespace LojaVeiculos
         {
             
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmSplash());
         }
     }
 }

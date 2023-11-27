@@ -13,10 +13,33 @@ namespace LojaVeiculos
             InitializeComponent();
         }
 
-        Conexao con = new Conexao();
-        formDAO dao = new formDAO();
+        readonly Conexao con = new Conexao();
 
-        public string nome, sobrenome, datanasc;
+        string idcli, idend, nome, sobrenome, datanasc, logra, numlogra, uf, cidade, bairro, desc;
+
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            idcli = txtIdCli.Text;
+            idend = txtIdEnd.Text;
+            nome = txtNome.Text;
+            sobrenome = txtSobreNome.Text;
+            datanasc = dtNasc.Text;
+            logra = txtLogra.Text;
+            numlogra = nmNoResi.Value.ToString();
+            uf = lbEstados.SelectedItem.ToString();
+            cidade = txtCidade.Text;
+            bairro = txtBairro.Text;
+            desc = txtDesc.Text;
+
+            if (ValidateFields())
+            {
+                 InsertClient();
+                 ClearFields();
+                 txtNome.Focus();
+            }
+
+        }
 
         private bool ValidateFields()
         {
@@ -26,7 +49,7 @@ namespace LojaVeiculos
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNome.Focus();
                 return false;
-                
+
             }
             else if (txtSobreNome.Text == "")
             {
@@ -79,20 +102,7 @@ namespace LojaVeiculos
             }
             else
             {
-                try
-                {
-                    dao.InsertClient();
-                    ClearFields();
-                    txtNome.Focus();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Não foi possível cadastrar o cliente.\nMotivo do erro: " + ex.Message);
-                    con.Disconnect();
-                    ClearFields();
-                    return false;
-                }
+                return true;
             }
         }
 
@@ -108,27 +118,27 @@ namespace LojaVeiculos
             lbEstados.SelectedIndex = -1;
         }
 
-        private void frmCliente_Load(object sender, EventArgs e)
-        {
-           
-            pbLine.BackColor = Color.White;
-        }
-        private void pbLine_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
 
-            g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
-                pbLine.Right, pbLine.Bottom);
-        }
-        private void btnCadastro_Click(object sender, EventArgs e)
+        private void InsertClient()
         {
-            if (ValidateFields())
+            try
             {
-            txtNome.Text = nome;
-            txtSobreNome.Text = sobrenome;
-            dtNasc.Text = datanasc;
+                string strCliSql = $"INSERT INTO TBCLIENTE (NMNOME, NMSOBRENOME, DTNASCIMENTO)" +
+                    $" VALUES ('{nome}', '{sobrenome}', STR_TO_DATE('{datanasc}', '%d/%m/%Y %T'));";
+
+                MySqlCommand cmdCli = new MySqlCommand(strCliSql, con.Connect());
+                cmdCli.ExecuteNonQuery();
+
+                MessageBox.Show("Dados cadastrados com sucesso!", "Sucesso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Disconnect();
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível cadastrar o cliente.\nMotivo do erro" + ex, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Disconnect();
+            }
         }
     }
 }

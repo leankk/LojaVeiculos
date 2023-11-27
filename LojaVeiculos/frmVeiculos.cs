@@ -1,12 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LojaVeiculos
@@ -20,7 +15,7 @@ namespace LojaVeiculos
 
         string id, tipo, fab, placa, modelo, preco, cor, desc, data;
 
-        Conexao con = new Conexao();
+        readonly Conexao con = new Conexao();
 
         private void frmVeiculos_Load(object sender, EventArgs e)
         {
@@ -39,10 +34,10 @@ namespace LojaVeiculos
         {
             try
             { 
-                fab = txtConsult.Text;
+                modelo = txtConsult.Text;
 
                 MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = $"SELECT * FROM TBVEICULO WHERE NMFABRICANTE = '{fab}'";
+                cmd.CommandText = $"SELECT * FROM TBVEICULO WHERE NMMODELO = '{modelo}'";
 
                 cmd.Connection = con.Connect();
                 MySqlDataAdapter objVei = new MySqlDataAdapter();
@@ -53,12 +48,14 @@ namespace LojaVeiculos
                 dgvVeiculos.DataSource = dbVei;
 
                 con.Disconnect();
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show("Ocorreu um erro ao mostrar os dados.\nMotivo do erro: " + ex, "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvVeiculos.DataSource = null;
             }
         }
 
@@ -81,10 +78,13 @@ namespace LojaVeiculos
 
             if (ValidateFields())
             {
-                DeleteCars();
-                ClearFields();
-
-                txtModelo.Focus();
+                if (MessageBox.Show("Deseja realizar a exclusão desses dados?", "Deletar Dados",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DeleteCars();
+                    ClearFields();
+                    txtModelo.Focus();
+                }
             }
         }
 
@@ -123,53 +123,64 @@ namespace LojaVeiculos
 
             if(ValidateFields())
             {
-                UpdateCars();
-                ClearFields();
+                if (MessageBox.Show("Deseja realizar a alteração desses dados?", "Alterar Dados",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdateCars();
+                    ClearFields();
 
-                txtModelo.Focus();
-            } 
-        }
+                    txtModelo.Focus();
+                }
+                }
+            }
 
         private bool ValidateFields()
          {
-            if (txtTipo.Text == "")
+            if (txtFab.Text == "")
             {
-                MessageBox.Show("Obrigatório Preencher o campo Modelo!", "Erro",
+                MessageBox.Show("Obrigatório preencher o campo Fabricante!", "Erro",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTipo.Focus();
+                txtFab.Focus();
                 return false;
             }
             else if (txtCor.Text == "")
             {
-                MessageBox.Show("Obrigatório Preencher o campo Cor!", "Erro",
+                MessageBox.Show("Obrigatório preencher o campo Cor!", "Erro",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCor.Focus();
                 return false;
             }
-            else if (txtFab.Text == "")
+            else if (txtTipo.Text == "")
             {
-                MessageBox.Show("Obrigatório Preencher o campo Fabricante!", "Erro",
+                MessageBox.Show("Obrigatório preencher o campo Tipo!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtFab.Focus();
                 return false;
             }
             else if (txtPlaca.Text == "")
             {
-                MessageBox.Show("Obrigatório Preencher o campo Placa!", "Erro",
+                MessageBox.Show("Obrigatório preencher o campo Placa!", "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPlaca.Focus();
                 return false;
             }
             else if (txtPreco.Text == "")
             {
-                MessageBox.Show("Obrigatório Preencher o campo Preço!", "Erro",
+                MessageBox.Show("Obrigatório preencher o campo Preço!", "Erro",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPreco.Focus();
                 return false;
             }
             else if (dtFab.Text == "")
             {
-                MessageBox.Show("Obrigatório Preencher o campo Placa!", "Erro",
+                MessageBox.Show("Obrigatório preencher o campo Data de Fabricação!", "Erro",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtFab.Focus();
+                return false;
+            }
+            else if (txtCor.Text == "")
+            {
+                MessageBox.Show("Obrigatório preencher o campo Cor!", "Erro",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtFab.Focus();
                 return false;
@@ -224,7 +235,8 @@ namespace LojaVeiculos
             try
             {
                 string strCars = $"UPDATE TBVEICULO" +
-                $" SET NMFABRICANTE = '{fab}', DSTIPO = '{tipo}', NMMODELO = '{modelo}', DTFABRICACAO = '{data}', NOPLACA = '{placa}', VLPRECO = '{preco}', DSCOR = '{cor}', DSDESCRICAO = '{desc}'" +
+                $" SET NMFABRICANTE = '{fab}', NMMODELO = '{modelo}', DSTIPO = '{tipo}', DTFABRICACAO = '{data}'" +
+                $", NOPLACA = '{placa}', VLPRECO = '{preco}', DSCOR = '{cor}', DSDESCRICAO = '{desc}'" +
                 $"WHERE CDVEICULO = '{id}';";
 
                 MySqlCommand cmdCars = new MySqlCommand(strCars, con.Connect());
@@ -275,8 +287,8 @@ namespace LojaVeiculos
             {
                 txtIdVei.Text = dgvVeiculos.SelectedRows[0].Cells[0].Value.ToString();
                 txtFab.Text = dgvVeiculos.SelectedRows[0].Cells[1].Value.ToString();
-                txtTipo.Text = dgvVeiculos.SelectedRows[0].Cells[2].Value.ToString();
-                txtModelo.Text = dgvVeiculos.SelectedRows[0].Cells[3].Value.ToString();
+                txtModelo.Text = dgvVeiculos.SelectedRows[0].Cells[2].Value.ToString();
+                txtTipo.Text = dgvVeiculos.SelectedRows[0].Cells[3].Value.ToString();
                 dtFab.Text = dgvVeiculos.SelectedRows[0].Cells[4].Value.ToString();
                 txtPlaca.Text = dgvVeiculos.SelectedRows[0].Cells[5].Value.ToString();
                 txtPreco.Text = dgvVeiculos.SelectedRows[0].Cells[6].Value.ToString();
