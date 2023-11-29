@@ -62,6 +62,7 @@ namespace LojaVeiculos
             // txtTipo
             // 
             this.txtTipo.Location = new System.Drawing.Point(484, 128);
+            this.txtTipo.MaxLength = 20;
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(191, 20);
             this.txtTipo.TabIndex = 4;
@@ -102,6 +103,7 @@ namespace LojaVeiculos
             // txtFab
             // 
             this.txtFab.Location = new System.Drawing.Point(130, 168);
+            this.txtFab.MaxLength = 40;
             this.txtFab.Name = "txtFab";
             this.txtFab.Size = new System.Drawing.Size(190, 20);
             this.txtFab.TabIndex = 1;
@@ -120,6 +122,7 @@ namespace LojaVeiculos
             // txtCor
             // 
             this.txtCor.Location = new System.Drawing.Point(130, 246);
+            this.txtCor.MaxLength = 20;
             this.txtCor.Name = "txtCor";
             this.txtCor.Size = new System.Drawing.Size(221, 20);
             this.txtCor.TabIndex = 3;
@@ -127,6 +130,7 @@ namespace LojaVeiculos
             // txtPlaca
             // 
             this.txtPlaca.Location = new System.Drawing.Point(487, 207);
+            this.txtPlaca.MaxLength = 8;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(189, 20);
             this.txtPlaca.TabIndex = 6;
@@ -145,6 +149,7 @@ namespace LojaVeiculos
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(130, 280);
+            this.txtDesc.MaxLength = 100;
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(547, 86);
@@ -238,6 +243,7 @@ namespace LojaVeiculos
             // txtModelo
             // 
             this.txtModelo.Location = new System.Drawing.Point(130, 209);
+            this.txtModelo.MaxLength = 30;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(221, 20);
             this.txtModelo.TabIndex = 2;
@@ -275,6 +281,7 @@ namespace LojaVeiculos
             // dtFab
             // 
             this.dtFab.Location = new System.Drawing.Point(557, 166);
+            this.dtFab.MaxLength = 4;
             this.dtFab.Name = "dtFab";
             this.dtFab.Size = new System.Drawing.Size(118, 20);
             this.dtFab.TabIndex = 5;
@@ -293,6 +300,7 @@ namespace LojaVeiculos
             // txtConsult
             // 
             this.txtConsult.Location = new System.Drawing.Point(333, 416);
+            this.txtConsult.MaxLength = 40;
             this.txtConsult.Name = "txtConsult";
             this.txtConsult.Size = new System.Drawing.Size(221, 20);
             this.txtConsult.TabIndex = 12;

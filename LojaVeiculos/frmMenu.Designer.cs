@@ -30,7 +30,7 @@
         {
             this.pnMenu = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnConsulta = new System.Windows.Forms.Button();
+            this.btnTroca = new System.Windows.Forms.Button();
             this.btnVeiculos = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
             this.pnMenu.Controls.Add(this.pictureBox2);
-            this.pnMenu.Controls.Add(this.btnConsulta);
+            this.pnMenu.Controls.Add(this.btnTroca);
             this.pnMenu.Controls.Add(this.btnVeiculos);
             this.pnMenu.Controls.Add(this.btnCliente);
             this.pnMenu.Controls.Add(this.btnInicio);
@@ -71,21 +71,21 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
-            // btnConsulta
+            // btnTroca
             // 
-            this.btnConsulta.FlatAppearance.BorderSize = 0;
-            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsulta.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnConsulta.Location = new System.Drawing.Point(0, 374);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(197, 54);
-            this.btnConsulta.TabIndex = 4;
-            this.btnConsulta.Text = "Trocar Usuário";
-            this.btnConsulta.UseVisualStyleBackColor = true;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            this.btnConsulta.MouseEnter += new System.EventHandler(this.btnConsulta_MouseEnter);
-            this.btnConsulta.MouseLeave += new System.EventHandler(this.btnConsulta_MouseLeave);
+            this.btnTroca.FlatAppearance.BorderSize = 0;
+            this.btnTroca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTroca.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTroca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnTroca.Location = new System.Drawing.Point(0, 374);
+            this.btnTroca.Name = "btnTroca";
+            this.btnTroca.Size = new System.Drawing.Size(197, 54);
+            this.btnTroca.TabIndex = 4;
+            this.btnTroca.Text = "Trocar Usuário";
+            this.btnTroca.UseVisualStyleBackColor = true;
+            this.btnTroca.Click += new System.EventHandler(this.btnTroca_Click);
+            this.btnTroca.MouseEnter += new System.EventHandler(this.btnTroca_MouseEnter);
+            this.btnTroca.MouseLeave += new System.EventHandler(this.btnTroca_MouseLeave);
             // 
             // btnVeiculos
             // 
@@ -222,7 +222,7 @@
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Button btnTroca;
         private System.Windows.Forms.Button btnVeiculos;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnInicio;

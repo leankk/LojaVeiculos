@@ -22,6 +22,7 @@ namespace LojaVeiculos
             pbLine.BackColor = Color.White;
             txtIdVei.Enabled = false;
             dgvVeiculos.Visible = false;
+            dgvVeiculos.BackgroundColor = Color.FromArgb(25, 25, 25);
         }
 
         private void pbLine_Paint(object sender, PaintEventArgs e)
@@ -139,8 +140,8 @@ namespace LojaVeiculos
 
                     txtModelo.Focus();
                 }
-                }
             }
+        }
 
         private bool ValidateFields()
          {
@@ -210,6 +211,7 @@ namespace LojaVeiculos
             txtPreco.Clear();
             dtFab.Clear();
             txtIdVei.Clear();
+            txtConsult.Clear();
         }
 
         private void InsertCars()

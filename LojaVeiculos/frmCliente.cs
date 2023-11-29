@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace LojaVeiculos
@@ -18,7 +17,24 @@ namespace LojaVeiculos
 
         string idcli, idend, nome, sobrenome, datanasc, logra, numlogra, uf, cidade, bairro, desc;
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+            dgvClients.Visible = false;
+            pbLine.BackColor = Color.White;
+            txtIdCli.Enabled = false;
+            txtIdEnd.Enabled = false;
+            dgvClients.BackgroundColor = Color.FromArgb(25, 25, 25);
+        }
+
+        private void frmCliente_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
+                pbLine.Right, pbLine.Bottom);
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
         {
             if (ValidateFields())
             {
@@ -33,13 +49,12 @@ namespace LojaVeiculos
                 cidade = txtCidade.Text;
                 bairro = txtBairro.Text;
                 desc = txtDesc.Text;
-           
-                if (MessageBox.Show("Deseja realizar a exclusão desses dados?", "Excluir Dados",
+
+                if (MessageBox.Show("Deseja realizar o cadastro desses dados?", "Cadastrar Dados",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    DeleteClient();
+                    InsertClient();
                     ClearFields();
-
                     txtNome.Focus();
                 }
             }
@@ -72,11 +87,32 @@ namespace LojaVeiculos
             }
         }
 
-        private void dgvClients_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            FillCells();
-        }
+            if (ValidateFields())
+            {
+                idcli = txtIdCli.Text;
+                idend = txtIdEnd.Text;
+                nome = txtNome.Text;
+                sobrenome = txtSobreNome.Text;
+                datanasc = txtdtNasc.Text;
+                logra = txtLogra.Text;
+                numlogra = txtNoResi.Text;
+                uf = lbEstados.SelectedItem.ToString();
+                cidade = txtCidade.Text;
+                bairro = txtBairro.Text;
+                desc = txtDesc.Text;
+           
+                if (MessageBox.Show("Deseja realizar a exclusão desses dados?", "Excluir Dados",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DeleteClient();
+                    ClearFields();
 
+                    txtNome.Focus();
+                }
+            }
+        }
 
         private void txtConsult_TextChanged(object sender, EventArgs e)
         {
@@ -112,48 +148,9 @@ namespace LojaVeiculos
             }
         }
 
-        private void frmCliente_Load(object sender, EventArgs e)
+        private void dgvClients_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dgvClients.Visible = false;
-            pbLine.BackColor = Color.White;
-            txtIdCli.Enabled = false;
-            txtIdEnd.Enabled = false;
-
-        }
-
-        private void frmCliente_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-
-            g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
-                pbLine.Right, pbLine.Bottom);
-        }
-
-        private void btnCadastro_Click(object sender, EventArgs e)
-        {
-            if (ValidateFields())
-            {
-                idcli = txtIdCli.Text;
-                idend = txtIdEnd.Text;
-                nome = txtNome.Text;
-                sobrenome = txtSobreNome.Text;
-                datanasc = txtdtNasc.Text;
-                logra = txtLogra.Text;
-                numlogra = txtNoResi.Text;
-                uf = lbEstados.SelectedItem.ToString();
-                cidade = txtCidade.Text;
-                bairro = txtBairro.Text;
-                desc = txtDesc.Text;
-
-                if (MessageBox.Show("Deseja realizar o cadastro desses dados?", "Cadastrar Dados",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    InsertClient();
-                    ClearFields();
-                    txtNome.Focus();
-                }
-            }
-
+            FillCells();
         }
 
         private bool ValidateFields()
@@ -344,7 +341,6 @@ namespace LojaVeiculos
                 txtCidade.Text = dgvClients.SelectedRows[0].Cells[9].Value.ToString();
                 txtBairro.Text = dgvClients.SelectedRows[0].Cells[10].Value.ToString();
                 txtDesc.Text = dgvClients.SelectedRows[0].Cells[11].Value.ToString();
-
             }
             catch (Exception ex)
             {

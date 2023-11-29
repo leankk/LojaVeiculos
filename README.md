@@ -1,4 +1,4 @@
 # LojaVeiculos
-It's a simple program made by me and my friends for our Systems Development course.
+It's a simple program made by me for my group of our Systems Development course.
 
-We create this program to perform basic operations on a database: create, read, update and delete.
+I create this program with C# WFA to perform the basic operations on a database: create, read, update and delete datas.

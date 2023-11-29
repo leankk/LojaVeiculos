@@ -31,11 +31,15 @@ namespace LojaVeiculos
             lblUser.Text = frmLogin.UserConnected;
         }
 
-        private void btnConsulta_Click(object sender, EventArgs e)
+        private void btnTroca_Click(object sender, EventArgs e)
         {
-            frmLogin objlog = new frmLogin();
-            objlog.ShowDialog();
-            this.Close();
+            if (MessageBox.Show("Deseja trocar de usuário?", "Trocar Usuário",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                frmLogin objlog = new frmLogin();
+                objlog.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
@@ -72,9 +76,9 @@ namespace LojaVeiculos
             btnCliente.BackColor = Color.FromArgb(25, 25, 25);
         }
 
-        private void btnConsulta_MouseEnter(object sender, EventArgs e)
+        private void btnTroca_MouseEnter(object sender, EventArgs e)
         {
-            btnConsulta.BackColor = Color.FromArgb(25, 25, 25);
+            btnTroca.BackColor = Color.FromArgb(25, 25, 25);
         }
 
         private void btnVeiculos_MouseEnter(object sender, EventArgs e)
@@ -92,9 +96,9 @@ namespace LojaVeiculos
             btnCliente.BackColor = Color.Transparent;
         }
 
-        private void btnConsulta_MouseLeave(object sender, EventArgs e)
+        private void btnTroca_MouseLeave(object sender, EventArgs e)
         {
-            btnConsulta.BackColor = Color.Transparent;
+            btnTroca.BackColor = Color.Transparent;
         }
 
         private void btnVeiculos_MouseLeave(object sender, EventArgs e)

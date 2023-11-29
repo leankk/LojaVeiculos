@@ -324,6 +324,7 @@ namespace LojaVeiculos
             // txtConsult
             // 
             this.txtConsult.Location = new System.Drawing.Point(311, 421);
+            this.txtConsult.MaxLength = 30;
             this.txtConsult.Name = "txtConsult";
             this.txtConsult.Size = new System.Drawing.Size(227, 20);
             this.txtConsult.TabIndex = 13;

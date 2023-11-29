@@ -1,12 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LojaVeiculos
@@ -26,8 +21,7 @@ namespace LojaVeiculos
         {
             pbLine.BackColor = Color.White;
             txtIdUsu.Enabled = false;
-            //dgvUsers.BackgroundColor = Color.FromArgb(100,0,15);
-            //dgvUsers.DefaultCellStyle.BackColor = Color.FromArgb(25, 25, 25);
+            dgvUsers.BackgroundColor = Color.FromArgb(25,25,25);
             dgvUsers.Visible = false;
         }
 
@@ -37,42 +31,6 @@ namespace LojaVeiculos
 
             g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
                 pbLine.Right, pbLine.Bottom);
-        }
-
-        private void txtPesq_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                nome = txtConsult.Text;
-
-                dgvUsers.Visible = true;
-
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = $"SELECT * FROM TBLOGIN WHERE NMUSUARIO = '{nome}'";
-
-                cmd.Connection = con.Connect();
-                MySqlDataAdapter objUser = new MySqlDataAdapter();
-                DataTable dbUser = new DataTable();
-
-                objUser.SelectCommand = cmd;
-                objUser.Fill(dbUser);
-                dgvUsers.DataSource = dbUser;
-
-                con.Disconnect();
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Ocorreu um erro ao mostrar os dados.\nMotivo do erro: " + ex, "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dgvUsers.DataSource = null;
-            }
-        }
-
-        private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            FillCells();
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -132,6 +90,42 @@ namespace LojaVeiculos
             }
         }
 
+        private void txtPesq_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                nome = txtConsult.Text;
+
+                dgvUsers.Visible = true;
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = $"SELECT * FROM TBLOGIN WHERE NMUSUARIO = '{nome}'";
+
+                cmd.Connection = con.Connect();
+                MySqlDataAdapter objUser = new MySqlDataAdapter();
+                DataTable dbUser = new DataTable();
+
+                objUser.SelectCommand = cmd;
+                objUser.Fill(dbUser);
+                dgvUsers.DataSource = dbUser;
+
+                con.Disconnect();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Ocorreu um erro ao mostrar os dados.\nMotivo do erro: " + ex, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvUsers.DataSource = null;
+            }
+        }
+
+        private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            FillCells();
+        }
+
         private void chkPwd_CheckedChanged(object sender, EventArgs e)
         {
             if (chkPwd.Checked)
@@ -171,6 +165,7 @@ namespace LojaVeiculos
             txtIdUsu.Clear();
             txtNome.Clear();
             txtSenha.Clear();
+            txtConsult.Clear();
         }
 
         private void InsertUser()
