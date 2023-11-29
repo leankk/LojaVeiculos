@@ -69,7 +69,7 @@ namespace LojaVeiculos
             this.btnDelete.Location = new System.Drawing.Point(445, 642);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(116, 33);
-            this.btnDelete.TabIndex = 39;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Deletar";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -84,7 +84,7 @@ namespace LojaVeiculos
             this.btnAlter.Location = new System.Drawing.Point(288, 642);
             this.btnAlter.Name = "btnAlter";
             this.btnAlter.Size = new System.Drawing.Size(116, 33);
-            this.btnAlter.TabIndex = 38;
+            this.btnAlter.TabIndex = 5;
             this.btnAlter.Text = "Alterar";
             this.btnAlter.UseVisualStyleBackColor = false;
             this.btnAlter.Click += new System.EventHandler(this.btnAlter_Click);
@@ -99,18 +99,19 @@ namespace LojaVeiculos
             this.btnCadastro.Location = new System.Drawing.Point(136, 642);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(112, 33);
-            this.btnCadastro.TabIndex = 37;
+            this.btnCadastro.TabIndex = 4;
             this.btnCadastro.Text = "Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = false;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // dgvUsers
             // 
+            this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Location = new System.Drawing.Point(176, 314);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.Size = new System.Drawing.Size(343, 305);
-            this.dgvUsers.TabIndex = 36;
+            this.dgvUsers.TabIndex = 8;
             this.dgvUsers.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_CellMouseDoubleClick);
             // 
             // label3
@@ -127,9 +128,10 @@ namespace LojaVeiculos
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(220, 205);
+            this.txtSenha.MaxLength = 15;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(255, 20);
-            this.txtSenha.TabIndex = 34;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label2
@@ -146,9 +148,10 @@ namespace LojaVeiculos
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(220, 152);
+            this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(255, 20);
-            this.txtNome.TabIndex = 32;
+            this.txtNome.TabIndex = 1;
             // 
             // pbLine
             // 
@@ -185,7 +188,7 @@ namespace LojaVeiculos
             this.txtConsult.Location = new System.Drawing.Point(305, 265);
             this.txtConsult.Name = "txtConsult";
             this.txtConsult.Size = new System.Drawing.Size(170, 20);
-            this.txtConsult.TabIndex = 42;
+            this.txtConsult.TabIndex = 7;
             this.txtConsult.TextChanged += new System.EventHandler(this.txtPesq_TextChanged);
             // 
             // txtIdUsu
@@ -203,7 +206,7 @@ namespace LojaVeiculos
             this.chkPwd.Location = new System.Drawing.Point(481, 207);
             this.chkPwd.Name = "chkPwd";
             this.chkPwd.Size = new System.Drawing.Size(102, 18);
-            this.chkPwd.TabIndex = 45;
+            this.chkPwd.TabIndex = 3;
             this.chkPwd.Text = "Mostrar senha";
             this.chkPwd.UseVisualStyleBackColor = true;
             this.chkPwd.CheckedChanged += new System.EventHandler(this.chkPwd_CheckedChanged);

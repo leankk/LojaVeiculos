@@ -20,6 +20,8 @@ namespace LojaVeiculos
         private void frmVeiculos_Load(object sender, EventArgs e)
         {
             pbLine.BackColor = Color.White;
+            txtIdVei.Enabled = false;
+            dgvVeiculos.Visible = false;
         }
 
         private void pbLine_Paint(object sender, PaintEventArgs e)
@@ -35,6 +37,8 @@ namespace LojaVeiculos
             try
             { 
                 modelo = txtConsult.Text;
+
+                dgvVeiculos.Visible = true;
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = $"SELECT * FROM TBVEICULO WHERE NMMODELO = '{modelo}'";
@@ -90,22 +94,26 @@ namespace LojaVeiculos
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            tipo = txtTipo.Text;
-            fab = txtFab.Text;
-            placa = txtPlaca.Text;
-            modelo = txtModelo.Text;
-            preco = txtPreco.Text;
-            cor = txtCor.Text;
-            desc = txtDesc.Text;
-            data = dtFab.Text;
-            id = txtIdVei.Text;
-
             if (ValidateFields())
             {
-                InsertCars();
-                ClearFields();
+                tipo = txtTipo.Text;
+                fab = txtFab.Text;
+                placa = txtPlaca.Text;
+                modelo = txtModelo.Text;
+                preco = txtPreco.Text;
+                cor = txtCor.Text;
+                desc = txtDesc.Text;
+                data = dtFab.Text;
+                id = txtIdVei.Text;
+            
+                if (MessageBox.Show("Deseja realizar a exclusão desses dados?", "Deletar Dados",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    InsertCars();
+                    ClearFields();
 
-                txtModelo.Focus();
+                    txtModelo.Focus();
+                }
             }
         }
 

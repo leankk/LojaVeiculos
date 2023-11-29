@@ -87,7 +87,6 @@ C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\bin\Debug\Syste
 C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\obj\Debug\LojaVeiculos.csproj.CopyComplete
 C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\obj\Debug\LojaVeiculos.frmCliente.resources
-C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\obj\Debug\LojaVeiculos.frmConsulta.resources
 C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\obj\Debug\LojaVeiculos.frmVeiculos.resources
-C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\obj\Debug\LojaVeiculos.csproj.AssemblyReference.cache
 C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\obj\Debug\LojaVeiculos.frmUsuarios.resources
+C:\Users\User\OneDrive\Documentos\etec\LojaVeiculos\LojaVeiculos\obj\Debug\LojaVeiculos.csproj.AssemblyReference.cache

@@ -64,7 +64,7 @@ namespace LojaVeiculos
             this.txtTipo.Location = new System.Drawing.Point(484, 128);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(191, 20);
-            this.txtTipo.TabIndex = 10;
+            this.txtTipo.TabIndex = 4;
             // 
             // label1
             // 
@@ -104,7 +104,7 @@ namespace LojaVeiculos
             this.txtFab.Location = new System.Drawing.Point(130, 168);
             this.txtFab.Name = "txtFab";
             this.txtFab.Size = new System.Drawing.Size(190, 20);
-            this.txtFab.TabIndex = 7;
+            this.txtFab.TabIndex = 1;
             // 
             // label4
             // 
@@ -122,14 +122,14 @@ namespace LojaVeiculos
             this.txtCor.Location = new System.Drawing.Point(130, 246);
             this.txtCor.Name = "txtCor";
             this.txtCor.Size = new System.Drawing.Size(221, 20);
-            this.txtCor.TabIndex = 9;
+            this.txtCor.TabIndex = 3;
             // 
             // txtPlaca
             // 
             this.txtPlaca.Location = new System.Drawing.Point(487, 207);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(189, 20);
-            this.txtPlaca.TabIndex = 12;
+            this.txtPlaca.TabIndex = 6;
             // 
             // label5
             // 
@@ -148,7 +148,7 @@ namespace LojaVeiculos
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(547, 86);
-            this.txtDesc.TabIndex = 14;
+            this.txtDesc.TabIndex = 8;
             // 
             // label6
             // 
@@ -171,7 +171,7 @@ namespace LojaVeiculos
             this.btnCadastro.Location = new System.Drawing.Point(130, 656);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(105, 32);
-            this.btnCadastro.TabIndex = 15;
+            this.btnCadastro.TabIndex = 9;
             this.btnCadastro.Text = "Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = false;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
@@ -186,7 +186,7 @@ namespace LojaVeiculos
             this.btnAlterar.Location = new System.Drawing.Point(329, 656);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(104, 32);
-            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.TabIndex = 10;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -201,11 +201,12 @@ namespace LojaVeiculos
             // 
             // dgvVeiculos
             // 
+            this.dgvVeiculos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVeiculos.Location = new System.Drawing.Point(130, 442);
             this.dgvVeiculos.Name = "dgvVeiculos";
             this.dgvVeiculos.Size = new System.Drawing.Size(500, 192);
-            this.dgvVeiculos.TabIndex = 19;
+            this.dgvVeiculos.TabIndex = 13;
             this.dgvVeiculos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvVeiculos_CellMouseDoubleClick);
             // 
             // btnDelete
@@ -218,7 +219,7 @@ namespace LojaVeiculos
             this.btnDelete.Location = new System.Drawing.Point(524, 656);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(106, 32);
-            this.btnDelete.TabIndex = 17;
+            this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Deletar";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -239,7 +240,7 @@ namespace LojaVeiculos
             this.txtModelo.Location = new System.Drawing.Point(130, 209);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(221, 20);
-            this.txtModelo.TabIndex = 8;
+            this.txtModelo.TabIndex = 2;
             // 
             // label8
             // 
@@ -258,7 +259,7 @@ namespace LojaVeiculos
             this.txtPreco.Mask = "$000,000,000.00";
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(190, 20);
-            this.txtPreco.TabIndex = 13;
+            this.txtPreco.TabIndex = 7;
             // 
             // label9
             // 
@@ -276,7 +277,7 @@ namespace LojaVeiculos
             this.dtFab.Location = new System.Drawing.Point(557, 166);
             this.dtFab.Name = "dtFab";
             this.dtFab.Size = new System.Drawing.Size(118, 20);
-            this.dtFab.TabIndex = 11;
+            this.dtFab.TabIndex = 5;
             // 
             // label10
             // 
@@ -294,7 +295,7 @@ namespace LojaVeiculos
             this.txtConsult.Location = new System.Drawing.Point(333, 416);
             this.txtConsult.Name = "txtConsult";
             this.txtConsult.Size = new System.Drawing.Size(221, 20);
-            this.txtConsult.TabIndex = 18;
+            this.txtConsult.TabIndex = 12;
             this.txtConsult.TextChanged += new System.EventHandler(this.txtConsult_TextChanged);
             // 
             // label11

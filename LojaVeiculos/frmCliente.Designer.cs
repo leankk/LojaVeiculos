@@ -45,23 +45,22 @@ namespace LojaVeiculos
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.lbEstados = new System.Windows.Forms.ListBox();
-            this.nmNoResi = new System.Windows.Forms.NumericUpDown();
-            this.dtNasc = new System.Windows.Forms.MaskedTextBox();
+            this.txtdtNasc = new System.Windows.Forms.MaskedTextBox();
             this.pbLine = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dgvClients = new System.Windows.Forms.DataGridView();
+            this.btnAlter = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtConsult = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtIdCli = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtIdEnd = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nmNoResi)).BeginInit();
+            this.txtNoResi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLine)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -78,9 +77,10 @@ namespace LojaVeiculos
             // txtSobreNome
             // 
             this.txtSobreNome.Location = new System.Drawing.Point(190, 156);
+            this.txtSobreNome.MaxLength = 30;
             this.txtSobreNome.Name = "txtSobreNome";
             this.txtSobreNome.Size = new System.Drawing.Size(217, 20);
-            this.txtSobreNome.TabIndex = 13;
+            this.txtSobreNome.TabIndex = 2;
             // 
             // label3
             // 
@@ -118,9 +118,10 @@ namespace LojaVeiculos
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(152, 120);
+            this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(255, 20);
-            this.txtNome.TabIndex = 8;
+            this.txtNome.TabIndex = 1;
             // 
             // label5
             // 
@@ -158,9 +159,10 @@ namespace LojaVeiculos
             // txtLogra
             // 
             this.txtLogra.Location = new System.Drawing.Point(176, 231);
+            this.txtLogra.MaxLength = 40;
             this.txtLogra.Name = "txtLogra";
             this.txtLogra.Size = new System.Drawing.Size(231, 20);
-            this.txtLogra.TabIndex = 17;
+            this.txtLogra.TabIndex = 4;
             // 
             // btnCadastro
             // 
@@ -172,7 +174,7 @@ namespace LojaVeiculos
             this.btnCadastro.Location = new System.Drawing.Point(80, 636);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(117, 33);
-            this.btnCadastro.TabIndex = 24;
+            this.btnCadastro.TabIndex = 10;
             this.btnCadastro.Text = "Cadastrar";
             this.btnCadastro.UseVisualStyleBackColor = false;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
@@ -191,16 +193,18 @@ namespace LojaVeiculos
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(180, 345);
+            this.txtCidade.MaxLength = 40;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(227, 20);
-            this.txtCidade.TabIndex = 25;
+            this.txtCidade.TabIndex = 7;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(180, 305);
+            this.txtBairro.MaxLength = 40;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(227, 20);
-            this.txtBairro.TabIndex = 27;
+            this.txtBairro.TabIndex = 6;
             // 
             // label10
             // 
@@ -247,23 +251,16 @@ namespace LojaVeiculos
             this.lbEstados.Location = new System.Drawing.Point(498, 121);
             this.lbEstados.Name = "lbEstados";
             this.lbEstados.Size = new System.Drawing.Size(116, 134);
-            this.lbEstados.TabIndex = 30;
+            this.lbEstados.TabIndex = 9;
             // 
-            // nmNoResi
+            // txtdtNasc
             // 
-            this.nmNoResi.Location = new System.Drawing.Point(287, 268);
-            this.nmNoResi.Name = "nmNoResi";
-            this.nmNoResi.Size = new System.Drawing.Size(120, 20);
-            this.nmNoResi.TabIndex = 31;
-            // 
-            // dtNasc
-            // 
-            this.dtNasc.Location = new System.Drawing.Point(327, 192);
-            this.dtNasc.Mask = "00/00/0000";
-            this.dtNasc.Name = "dtNasc";
-            this.dtNasc.Size = new System.Drawing.Size(80, 20);
-            this.dtNasc.TabIndex = 32;
-            this.dtNasc.ValidatingType = typeof(System.DateTime);
+            this.txtdtNasc.Location = new System.Drawing.Point(327, 192);
+            this.txtdtNasc.Mask = "00/00/0000";
+            this.txtdtNasc.Name = "txtdtNasc";
+            this.txtdtNasc.Size = new System.Drawing.Size(80, 20);
+            this.txtdtNasc.TabIndex = 3;
+            this.txtdtNasc.ValidatingType = typeof(System.DateTime);
             // 
             // pbLine
             // 
@@ -273,41 +270,45 @@ namespace LojaVeiculos
             this.pbLine.TabIndex = 16;
             this.pbLine.TabStop = false;
             // 
-            // dataGridView1
+            // dgvClients
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(71, 463);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 157);
-            this.dataGridView1.TabIndex = 51;
+            this.dgvClients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClients.Location = new System.Drawing.Point(71, 463);
+            this.dgvClients.Name = "dgvClients";
+            this.dgvClients.Size = new System.Drawing.Size(543, 157);
+            this.dgvClients.TabIndex = 14;
+            this.dgvClients.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvClients_CellMouseDoubleClick);
             // 
-            // button1
+            // btnAlter
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.button1.Location = new System.Drawing.Point(287, 636);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 33);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Alterar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAlter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
+            this.btnAlter.FlatAppearance.BorderSize = 0;
+            this.btnAlter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlter.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnAlter.Location = new System.Drawing.Point(287, 636);
+            this.btnAlter.Name = "btnAlter";
+            this.btnAlter.Size = new System.Drawing.Size(117, 33);
+            this.btnAlter.TabIndex = 11;
+            this.btnAlter.Text = "Alterar";
+            this.btnAlter.UseVisualStyleBackColor = false;
+            this.btnAlter.Click += new System.EventHandler(this.btnAlter_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.button2.Location = new System.Drawing.Point(482, 636);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 33);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "Deletar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(15)))));
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnDelete.Location = new System.Drawing.Point(482, 636);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(117, 33);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Deletar";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label8
             // 
@@ -320,12 +321,13 @@ namespace LojaVeiculos
             this.label8.TabIndex = 55;
             this.label8.Text = "Consultar Cliente: ";
             // 
-            // textBox1
+            // txtConsult
             // 
-            this.textBox1.Location = new System.Drawing.Point(311, 421);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 54;
+            this.txtConsult.Location = new System.Drawing.Point(311, 421);
+            this.txtConsult.Name = "txtConsult";
+            this.txtConsult.Size = new System.Drawing.Size(227, 20);
+            this.txtConsult.TabIndex = 13;
+            this.txtConsult.TextChanged += new System.EventHandler(this.txtConsult_TextChanged);
             // 
             // label11
             // 
@@ -344,7 +346,7 @@ namespace LojaVeiculos
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(195, 20);
-            this.txtDesc.TabIndex = 56;
+            this.txtDesc.TabIndex = 8;
             // 
             // label12
             // 
@@ -384,12 +386,21 @@ namespace LojaVeiculos
             this.txtIdEnd.Size = new System.Drawing.Size(52, 20);
             this.txtIdEnd.TabIndex = 60;
             // 
+            // txtNoResi
+            // 
+            this.txtNoResi.Location = new System.Drawing.Point(228, 267);
+            this.txtNoResi.MaxLength = 10;
+            this.txtNoResi.Name = "txtNoResi";
+            this.txtNoResi.Size = new System.Drawing.Size(179, 20);
+            this.txtNoResi.TabIndex = 5;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(702, 700);
+            this.Controls.Add(this.txtNoResi);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtIdEnd);
             this.Controls.Add(this.label12);
@@ -397,12 +408,11 @@ namespace LojaVeiculos
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dtNasc);
-            this.Controls.Add(this.nmNoResi);
+            this.Controls.Add(this.txtConsult);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAlter);
+            this.Controls.Add(this.dgvClients);
+            this.Controls.Add(this.txtdtNasc);
             this.Controls.Add(this.lbEstados);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtBairro);
@@ -424,9 +434,10 @@ namespace LojaVeiculos
             this.Name = "frmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCliente";
-            ((System.ComponentModel.ISupportInitialize)(this.nmNoResi)).EndInit();
+            this.Load += new System.EventHandler(this.frmCliente_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmCliente_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pbLine)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,18 +462,18 @@ namespace LojaVeiculos
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox lbEstados;
-        private System.Windows.Forms.NumericUpDown nmNoResi;
-        private System.Windows.Forms.MaskedTextBox dtNasc;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox txtdtNasc;
+        private System.Windows.Forms.DataGridView dgvClients;
+        private System.Windows.Forms.Button btnAlter;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtConsult;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtIdCli;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtIdEnd;
+        private System.Windows.Forms.TextBox txtNoResi;
     }
 }

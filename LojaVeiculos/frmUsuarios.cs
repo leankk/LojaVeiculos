@@ -25,6 +25,10 @@ namespace LojaVeiculos
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             pbLine.BackColor = Color.White;
+            txtIdUsu.Enabled = false;
+            //dgvUsers.BackgroundColor = Color.FromArgb(100,0,15);
+            //dgvUsers.DefaultCellStyle.BackColor = Color.FromArgb(25, 25, 25);
+            dgvUsers.Visible = false;
         }
 
         private void pbLine_Paint(object sender, PaintEventArgs e)
@@ -40,6 +44,8 @@ namespace LojaVeiculos
             try
             {
                 nome = txtConsult.Text;
+
+                dgvUsers.Visible = true;
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = $"SELECT * FROM TBLOGIN WHERE NMUSUARIO = '{nome}'";
@@ -71,16 +77,20 @@ namespace LojaVeiculos
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            id = txtIdUsu.Text;
-            nome = txtNome.Text;
-            senha = txtSenha.Text;
-
             if (ValidateFields())
             {
-                InsertUser();
-                ClearFields();
+                id = txtIdUsu.Text;
+                nome = txtNome.Text;
+                senha = txtSenha.Text;
 
-                txtNome.Focus();
+                if (MessageBox.Show("Deseja realizar o cadastro desses dados?", "Cadastrar Dados",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    InsertUser();
+                    ClearFields();
+
+                    txtNome.Focus();
+                }
             }
         }
 
@@ -218,9 +228,9 @@ namespace LojaVeiculos
             {
                 string strUser = $"DELETE FROM TBLOGIN WHERE CDLOGIN = '{id}';";
 
-                MySqlCommand cmdCars = new MySqlCommand(strUser, con.Connect());
+                MySqlCommand cmdUser = new MySqlCommand(strUser, con.Connect());
 
-                cmdCars.ExecuteNonQuery();
+                cmdUser.ExecuteNonQuery();
 
                 MessageBox.Show("Dados deletados com sucesso!", "Sucesso",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

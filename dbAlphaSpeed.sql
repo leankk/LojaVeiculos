@@ -18,7 +18,7 @@ nmNome VARCHAR(30) NOT NULL,
 nmSobrenome VARCHAR(30) NOT NULL,
 dtNascimento DATE NOT NULL,
 cdEndereco INT NOT NULL,
-CONSTRAINT FK_ClienteEndereco FOREIGN KEY (cdEndereco)
+FOREIGN KEY (cdEndereco)
 	REFERENCES tbEnderecoCli(cdEndereco)
 );
 
@@ -27,11 +27,6 @@ cdLogin INT PRIMARY KEY AUTO_INCREMENT,
 nmUsuario VARCHAR(30) NOT NULL,
 dsSenha VARCHAR(15) NOT NULL
 );
-
-INSERT INTO tbLogin (nmUsuario, dsSenha)
-VALUES ("Admin", 1234);
-
-SELECT * FROM tbLogin;
 
 CREATE TABLE tbVeiculo (
 cdVeiculo int PRIMARY KEY AUTO_INCREMENT,
@@ -43,4 +38,4 @@ noPlaca char(8) NOT NULL,
 vlPreco varchar(20) NOT NULL,
 dsCor varchar(20) NOT NULL,
 dsDescricao varchar(100)
-);
+);             
