@@ -25,32 +25,7 @@ namespace LojaVeiculos
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            DataTable dados = new DataTable();
-            MySqlDataAdapter select = new MySqlDataAdapter("SELECT * FROM TBLOGIN WHERE NMUSUARIO=@USER AND DSSENHA=@SENHA", con.Connect());
-            select.SelectCommand.Parameters.AddWithValue("@USER", txtUsuario.Text);
-            select.SelectCommand.Parameters.AddWithValue("@SENHA", txtSenha.Text);
-            select.Fill(dados);
-
-            if (txtUsuario.Text.Length == 0 || txtSenha.Text.Length == 0) 
-            {
-                MessageBox.Show("Digite um usuário e/ou senha!", "Erro",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                con.Disconnect();
-            }
-            else if (dados.Rows.Count == 0)
-            {
-                MessageBox.Show("Usuário ou senha inválidos!", "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                con.Disconnect();
-            }
-            else
-            {
-                UserConnected = txtUsuario.Text;
-                log = true;
-                frmMenu objMenu = new frmMenu();
-                objMenu.ShowDialog();
-                this.Close();
-            }
+            Login();
         }
     
         private void btnSair_Click(object sender, EventArgs e)
@@ -81,6 +56,45 @@ namespace LojaVeiculos
 
             g.DrawLine(Pens.White, pbLine.Left, pbLine.Top,
                 pbLine.Right, pbLine.Bottom);
+        }
+
+        // método em que aceita a tecla Enter como botão de click
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Login();
+            }
+        }
+
+        private void Login()
+        {
+            DataTable dados = new DataTable();
+            MySqlDataAdapter select = new MySqlDataAdapter("SELECT * FROM TBLOGIN WHERE NMUSUARIO=@USER AND DSSENHA=@SENHA", con.Connect());
+            select.SelectCommand.Parameters.AddWithValue("@USER", txtUsuario.Text);
+            select.SelectCommand.Parameters.AddWithValue("@SENHA", txtSenha.Text);
+            select.Fill(dados);
+
+            if (txtUsuario.Text.Length == 0 || txtSenha.Text.Length == 0)
+            {
+                MessageBox.Show("Digite um usuário e/ou senha!", "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Disconnect();
+            }
+            else if (dados.Rows.Count == 0)
+            {
+                MessageBox.Show("Usuário ou senha inválidos!", "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Disconnect();
+            }
+            else
+            {
+                UserConnected = txtUsuario.Text;
+                log = true;
+                frmMenu objMenu = new frmMenu();
+                objMenu.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

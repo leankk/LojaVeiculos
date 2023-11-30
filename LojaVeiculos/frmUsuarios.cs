@@ -25,6 +25,7 @@ namespace LojaVeiculos
             dgvUsers.Visible = false;
         }
 
+        //coloca a cor e define a linha no picturebox
         private void pbLine_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -90,6 +91,7 @@ namespace LojaVeiculos
             }
         }
 
+        //Consulta no BD
         private void txtPesq_TextChanged(object sender, EventArgs e)
         {
             try
@@ -121,6 +123,7 @@ namespace LojaVeiculos
             }
         }
 
+        //método para preencher o formulário com os dados do DataGridView
         private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             FillCells();
@@ -138,6 +141,7 @@ namespace LojaVeiculos
             }
         }
 
+        //método de validação das textboxes
         private bool ValidateFields()
         {
             if (txtNome.Text == "")

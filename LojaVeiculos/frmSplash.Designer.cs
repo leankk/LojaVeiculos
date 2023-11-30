@@ -44,7 +44,7 @@
             // 
             this.pgSplash.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.pgSplash.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pgSplash.Location = new System.Drawing.Point(12, 253);
+            this.pgSplash.Location = new System.Drawing.Point(12, 281);
             this.pgSplash.Margin = new System.Windows.Forms.Padding(0);
             this.pgSplash.Name = "pgSplash";
             this.pgSplash.Size = new System.Drawing.Size(633, 35);
@@ -55,7 +55,7 @@
             // 
             this.pbSplash.BackgroundImage = global::LojaVeiculos.Properties.Resources.logoalt;
             this.pbSplash.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbSplash.Location = new System.Drawing.Point(117, -43);
+            this.pbSplash.Location = new System.Drawing.Point(112, -29);
             this.pbSplash.Name = "pbSplash";
             this.pbSplash.Size = new System.Drawing.Size(414, 340);
             this.pbSplash.TabIndex = 4;
@@ -66,7 +66,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(658, 300);
+            this.ClientSize = new System.Drawing.Size(658, 325);
             this.Controls.Add(this.pgSplash);
             this.Controls.Add(this.pbSplash);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

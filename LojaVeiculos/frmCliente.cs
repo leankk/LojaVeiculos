@@ -26,6 +26,7 @@ namespace LojaVeiculos
             dgvClients.BackgroundColor = Color.FromArgb(25, 25, 25);
         }
 
+        //método para mudar a cor da PictureBox
         private void frmCliente_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -114,6 +115,7 @@ namespace LojaVeiculos
             }
         }
 
+        //Método para mostrar os dados de tabelas no DataGridView com INNER JOIN
         private void txtConsult_TextChanged(object sender, EventArgs e)
         {
             try
@@ -148,11 +150,13 @@ namespace LojaVeiculos
             }
         }
 
+        //método para preencher o formulário com dados do DataGridView
         private void dgvClients_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             FillCells();
         }
 
+        //método de validação de campos
         private bool ValidateFields()
         {
             if (txtNome.Text == "")
@@ -234,6 +238,8 @@ namespace LojaVeiculos
             txtConsult.Clear();
         }
 
+        //Os métodos abaixo foram utilizados o comando SQL TRANSACTION para fazer manipulações em
+        //duas tabelas em um comando só
         private void InsertClient()
         {
             try

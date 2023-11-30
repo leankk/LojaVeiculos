@@ -10,7 +10,7 @@ namespace LojaVeiculos
 {
     internal class Conexao
     {
-        MySqlConnection strCon = new MySqlConnection(@"Data Source=localhost; Initial Catalog=DBalphaspeed; UserID=root; Pwd=L34ndr0S0uz43006");
+        MySqlConnection strCon = new MySqlConnection(@"Data Source=localhost; Initial Catalog=DBalphaspeed; UserID=; Pwd=");
 
 
         public MySqlConnection Connect()

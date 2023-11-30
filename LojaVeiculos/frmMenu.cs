@@ -12,6 +12,7 @@ namespace LojaVeiculos
             
         }
 
+        //método para mostrar as telas no panel
         public void SwitchScreens(object menu)
         {
             if (this.pnConteudo.Controls.Count > 0)
@@ -37,7 +38,7 @@ namespace LojaVeiculos
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 frmLogin objlog = new frmLogin();
-                objlog.ShowDialog();
+                objlog.Show();
                 this.Close();
             }
         }

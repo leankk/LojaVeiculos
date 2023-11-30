@@ -12,11 +12,12 @@ namespace LojaVeiculos
             InitializeComponent();
         }
 
+        //método para contagem e progresso da ProgressBar
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (pgSplash.Value < 100)
             {
-                pgSplash.Value += 20;
+                pgSplash.Value += 5;
             }
             else
             {
@@ -32,7 +33,6 @@ namespace LojaVeiculos
         {
             pgSplash.Style = ProgressBarStyle.Continuous;
             pgSplash.ForeColor = Color.FromArgb(100, 0, 25);
-            pgSplash.BackColor = Color.FromArgb(0, 0, 0);
         }
     }
 }

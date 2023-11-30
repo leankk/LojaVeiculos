@@ -25,6 +25,7 @@ namespace LojaVeiculos
             dgvVeiculos.BackgroundColor = Color.FromArgb(25, 25, 25);
         }
 
+        //método para mudar a cor e linha da PictureBox
         private void pbLine_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -33,6 +34,7 @@ namespace LojaVeiculos
                 pbLine.Right, pbLine.Bottom);
         }
 
+        //Consulta no BD
         private void txtConsult_TextChanged(object sender, EventArgs e)
         {
             try
@@ -64,6 +66,7 @@ namespace LojaVeiculos
             }
         }
 
+        //método para preencher o formulário com dados da DataGridView
         private void dgvVeiculos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             FillCells();
@@ -143,6 +146,7 @@ namespace LojaVeiculos
             }
         }
 
+        //validação de campos
         private bool ValidateFields()
          {
             if (txtFab.Text == "")
