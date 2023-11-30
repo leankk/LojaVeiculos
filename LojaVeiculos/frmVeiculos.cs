@@ -110,7 +110,7 @@ namespace LojaVeiculos
                 data = dtFab.Text;
                 id = txtIdVei.Text;
             
-                if (MessageBox.Show("Deseja realizar a exclusão desses dados?", "Deletar Dados",
+                if (MessageBox.Show("Deseja realizar o cadastro desses dados?", "Cadastrar Dados",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     InsertCars();
