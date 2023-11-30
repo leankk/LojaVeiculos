@@ -177,7 +177,7 @@ namespace LojaVeiculos
                 txtPlaca.Focus();
                 return false;
             }
-            else if (txtPreco.Text == "")
+            else if (txtPreco.Text == "R$   .   .   ,")
             {
                 MessageBox.Show("Obrigatório preencher o campo Preço!", "Erro",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
